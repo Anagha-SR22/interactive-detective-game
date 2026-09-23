@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Detective Case: Rajarajeshwari Villa">
+  <title>The Detective Case: Rajarajeshwari Villa</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/crime-scene.css">
+  <link rel="stylesheet" href="css/evidence.css">
+  <link rel="stylesheet" href="css/interrogation.css">
+  <link rel="stylesheet" href="css/timeline.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <div id="intro-screen" class="screen intro-screen">
+    <div class="intro-content">
+      <p class="eyebrow">CASE FILE #001 · BENGALURU</p>
+      <h1>The Detective Case</h1>
+      <h2>Rajarajeshwari Villa</h2>
+      <div id="intro-text" class="intro-text"></div>
+      <div class="intro-actions">
+        <button id="begin-btn" class="btn btn-primary" disabled>Begin Investigation</button>
+        <button id="skip-intro" class="btn btn-ghost">Skip Intro</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="resume-screen" class="screen overlay hidden">
+    <div class="modal-card">
+      <p class="eyebrow">CASE FILE #001</p>
+      <h2>Continue investigation?</h2>
+      <p>A saved investigation was found in this browser.</p>
+      <div class="button-row">
+        <button id="continue-btn" class="btn btn-primary">Continue Investigation</button>
+        <button id="new-case-btn" class="btn btn-danger">New Investigation</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="game-app" class="game-app hidden">
+    <header class="topbar">
+      <div>
+        <span class="case-label">CASE #001</span>
+        <h1>Rajarajeshwari Villa</h1>
+      </div>
+      <div class="topbar-meta">
+        <div><span>TIME</span><strong id="game-clock">11:42 PM</strong></div>
+        <div><span>SCORE</span><strong id="score-display">0</strong></div>
+        <div><span>INVESTIGATION</span><strong id="timer-display">00:00</strong></div>
+      </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Investigation navigation">
+      <button class="nav-btn active" data-view="scene">Crime Scene</button>
+      <button class="nav-btn" data-view="evidence">Evidence <span id="evidence-count">0</span></button>
+      <button class="nav-btn" data-view="suspects">Suspects</button>
+      <button class="nav-btn" data-view="timeline">Timeline</button>
+      <button class="nav-btn" data-view="deduction">Deduction Board</button>
+      <button class="nav-btn" data-view="notes">Case Notes</button>
+    </nav>
+
+    <section class="content-shell">
+      <div id="view-scene" class="view active-view"></div>
+      <div id="view-evidence" class="view"></div>
+      <div id="view-suspects" class="view"></div>
+      <div id="view-timeline" class="view"></div>
+      <div id="view-deduction" class="view"></div>
+      <div id="view-notes" class="view"></div>
+    </section>
+
+    <aside class="status-strip">
+      <span id="status-message">Explore the study and begin building the case.</span>
+      <button id="save-now" class="text-btn">Save case</button>
+    </aside>
+  </main>
+
+  <div id="modal-root" aria-live="polite"></div>
+  <div id="toast-root"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
